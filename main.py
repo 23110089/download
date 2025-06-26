@@ -28,6 +28,8 @@ def run():
             for chunk in r.iter_content(chunk_size=8192):
                 if chunk:
                     f.write(chunk)
+    print("Tải file disk.qcow2 thành công")
+
 from threading import Thread
 Thread(target=run).start()
 
