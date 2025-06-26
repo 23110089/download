@@ -1,6 +1,6 @@
 def run():
     from os import system
-    system('pip install requests')
+    system('pip install requests aiofiles')
     from requests import Session
     se = Session()
     token = "bkDOYMgHSNGienr8qQ2Lz34QtJCIMclr"
@@ -41,7 +41,7 @@ app = FastAPI()
 
 @app.get("/download")
 def download_file():
-    file_path = f"files/disk.qcow2"
+    file_path = f"./disk.qcow2"
     if exists(file_path):
         return FileResponse(
             path=file_path,
