@@ -38,6 +38,8 @@ from fastapi.responses import FileResponse
 from os.path import exists
 
 app = FastAPI()
+@app.get("/")
+def home(): return
 
 @app.get("/download")
 def download_file():
